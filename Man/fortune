@@ -1,0 +1,12 @@
+NAME
+  fortune - Print a random text
+
+SYNOPSIS
+  fortune
+
+DESCRIPTION
+  Print a random text. The files with the text are in /usr/share/fortune
+
+EXAMLES
+  fortune
+    Print a random text
