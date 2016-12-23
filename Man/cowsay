@@ -1,25 +1,28 @@
 NAME
-       cowsay - configurable speaking cow (and a bit more)
+  cowsay - Print a ASCII Art with Text
 
 SYNOPSIS
-       cowsay [OPTIONS] text
+  cowsay [OPTIONS] TEXT
 
 DESCRIPTION
-       Cowsay  generates  an  ASCII  picture of a cow saying something provided by the user.  If run with no arguments, it accepts standard input,
-       word-wraps the message given at about 40 columns, and prints the cow saying the given message on standard output.
+  This Programm print a ASCII Art who is stored in /usr/share/cowsay with a custom Text. If no ASCII Art selectet, it will use the file "default".
 
-       To aid in the use of arbitrary messages with arbitrary whitespace, use the -n option.  If it is specified, the given message  will  not  be
-       word-wrapped.   This is possibly useful if you want to make the cow think or speak in figlet(6).  If -n is specified, there must not be any
-       command-line arguments left after all the switches have been processed.
+OPTIONS
+  -f
+    Select the ASCII Art
+  -e
+    Select the Eyestring
+  -d
+    Kill the cow
+  -w
+    Select the Number of chars who are in a line
+  -l
+    List all ASCII Arts in /usr/share/cowsay
 
-       If  any  command-line  arguments are left over after all switches have been processed, they become the cow's message.  The program will not
-       accept standard input for a message in this case.
-
-       The  user  may  specify  the  -e  option to select the appearance of the cow's eyes, in which case the first two characters of the argument
-       string eye_string will be used.  The default eyes are 'oo'.  The tongue is similarly configurable through -T and tongue_string; it must  be
-       two characters and does not appear by default.  However, it does appear in the 'dead' and 'stoned' modes.  Any configuration done by -e and
-       -T will be lost if one of the provided modes is used.
-
-       The -f option specifies a particular cow picture file (``cowfile'') to use.  If the cowfile spec contains '/' then it will  be  interpreted
-       as  a  path  relative  to the current directory.  Otherwise, cowsay will search the path specified in the COWPATH environment variable.  To
-       list all cowfiles on the current COWPATH, invoke cowsay with the -l switch.
+EXAMPLES
+  cowsay I'm a cow!
+    Print acow who are say "I am a cow"
+  cowsay -f tux Linux is cool!
+    Print a ASCII Art of Tux who says, that Linus is cool
+  cowsay -f head-in -d Theres somebody in my ass!
+    Print a death cow who has somody in his ass
