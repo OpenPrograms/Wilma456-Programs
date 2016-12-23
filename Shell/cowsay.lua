@@ -6,6 +6,7 @@ local cowname = "default"
 local deadstr = "  "
 local argmode = "none"
 local saytext = ""
+local charlimit = 40
 local exit = false
 for _,text in ipairs(Args) do
 if argmode == "cowsel" then
@@ -16,6 +17,13 @@ elseif argmode == "eyes" then
   argmode = "none"
 elseif argmode == "text" then
   saytext = saytext.." "..text
+elseif argmode == "charsel" then
+  charlimit = tonumber(text)
+  argmode = "none"
+  if charlimit == nil then
+    print("-w must be a Number")
+    return
+  end
 else
   if text == "-f" then
     argmode = "cowsel"
@@ -26,6 +34,8 @@ else
     eyestr = "xx"
   elseif text == "-p" then
     eyestr = "@@"
+  elseif text == "-w"  then
+    argmode = "charsel"
   elseif text == "-l" then
     local filelist = fs.list("/usr/share/cowsay")
     while true do
@@ -86,7 +96,7 @@ end
 
 readFile(cowname)
 
-if saytext:len() < 40 then
+if saytext:len() < charlimit then
   io.write(" ")
   for i = saytext:len()+2,1,-1 do
     io.write("_")
@@ -100,7 +110,7 @@ if saytext:len() < 40 then
   print()
 else
   io.write(" ")
-  for i = 40,1,-1 do
+  for i = charlimit,1,-1 do
     io.write("_")
   end
   print()
@@ -110,14 +120,14 @@ else
 
  for i = 1,#saytext do
   local c = saytext:sub(i,i)
-  if charcou == 40 then
+  if charcou == charlimit then
     if charpos == "start" then
       print(" \\")
       charpos = nil
     else
       print(" |")
     end
-   if saytext:len()-i < 40 then
+   if saytext:len()-i < charlimit then
       io.write("\\ ")
    else
     io.write("| ")
@@ -129,12 +139,12 @@ else
  end
  end
 
-  for i=40-charcou,1,-1 do
+  for i=charlimit-charcou,1,-1 do
     io.write(" ")
   end
   print(" /")
   io.write(" ")
-  for i=40,1,-1 do
+  for i=charlimit,1,-1 do
     io.write("-")
   end
   print()
