@@ -1,0 +1,16 @@
+NAME
+  cmatrix - Matrix like Screensaver
+  
+SYNOPSIS
+  cmatrix
+  
+KEY BINDINGS
+  Q: Quit
+  0-9: Set Speed (0: fast: 9 slow)
+  @: Set Colour to Green
+  !: Set Colour to Red
+  #: Set Colour to Yellow
+  $: Set Colour to Blue
+  &: Set Colour to White
+  %: Set Colour to Magenta
+  ^: Set Colour to Cyan
