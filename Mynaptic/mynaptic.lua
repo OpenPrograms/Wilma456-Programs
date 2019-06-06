@@ -1,4 +1,4 @@
---Mynaptic Version 2.0 made by Wilma456
+--Mynaptic Version 2.1 made by JakobDev
 local component = require("component")
 local event = require("event")
 local io = require("io")
@@ -15,7 +15,7 @@ local nScrollpos = 0
 local sSearch = ""
 local sOppmPath ="/usr/share/mynaptic/oppm-mynaptic.lua"
 local sHistoryPath = "/var/mynaptic/history.txt"
-local sVersion = "2.0"
+local sVersion = "2.1"
 
 if not filesystem.exists(sOppmPath) then
     print("oppm not found")
@@ -56,7 +56,7 @@ table.insert(tHelp,tTemp)
 
 tTemp = {}
 tTemp["title"] = "License"
-tTemp["content"] = [[Copyright (c) 2018, Wilma456
+tTemp["content"] = [[Copyright (c) 2018-2019, JakobDev
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -83,7 +83,7 @@ table.insert(tHelp,tTemp)
 
 tTemp = {}
 tTemp["title"] = "About"
-tTemp["content"] = "Mynaptic for OPPM Version "..sVersion.." made by Wilma456"
+tTemp["content"] = "Mynaptic for OPPM Version "..sVersion.." made by JakobDev"
 table.insert(tHelp,tTemp)
 
 --Packges install type

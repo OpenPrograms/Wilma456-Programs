@@ -1,4 +1,4 @@
---cmatrix made by Wilma456
+--cmatrix made by JakobDev
 --Licensed under BSD-2-Clause
 local component = require("component")
 local event = require("event")
